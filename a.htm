@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World 友達 wavy プロジェクト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77a200 3px solid;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: right;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 400px;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+        }
+        .hero .btn {
+            background: #77a200;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .hero .btn:hover {
+            background: #5e8b00;
+            transform: scale(1.05);
+        }
+        .content {
+            padding: 40px 20px;
+            background: #2c2c2c;
+            margin: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .content h1 {
+            color: #77a200;
+        }
+        .content p {
+            font-size: 18px;
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 10px;
+            background: #444;
+            border-left: 10px solid #77a200;
+        }
+        blockquote p {
+            font-style: italic;
+        }
+        .faq {
+            background: #1f1f1f;
+            padding: 40px 20px;
+            margin: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .faq h2 {
+            text-align: center;
+            color: #77a200;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding: 10px;
+            background: #2c2c2c;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .faq-item h3 {
+            color: #77a200;
+        }
+        .faq-item p {
+            color: #666;
+            display: none;
+            padding-top: 10px;
+        }
+        .faq-item::after {
+            content: '▼';
+            float: right;
+            color: #77a200;
+            font-size: 18px;
+        }
+        .faq-item.active::after {
+            content: '▲';
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .line-btn {
+            background: #00c300;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .line-btn:hover {
+            background: #009900;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.querySelector('p');
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>World 友達 wavy プロジェクト</h1>
+            <ul>
+                <li><a href="#join">参加する</a></li>
+                <li><a href="#faq">Q&A</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h1>世界中の仲間とつながり、お金を稼ぎ、子供達に繋げる豊かな人生を創ろう。</h1>
+            <a href="https://lin.ee/WxkrxbW" class="btn">今すぐ参加する</a>
+        </div>
+    </section>
+    <section class="content container">
+        <h1>あなたは、人生においてお金は重要だと感じていますか？</h1>
+        <p>お金は、あなたに自由と選択肢を与えてくれる大切なツールです。そして、お金を稼ぐために、世界へと視野を広げてみませんか？「World 友達 wavy」プロジェクトは、国境を越えて協力し合い、共に繁栄を目指すコミュニティです。</p>
+        <h2>国際的な視野で外資を稼ごう</h2>
+        <blockquote>
+            <p>『国境を越えることで、より多くの機会と多様性を手に入れることができる。世界中の市場にアクセスすることで、選択肢が広がり、特定の通貨や市場に依存するリスクを軽減することができる。世界はあなたの投資の遊び場であり、そこには無限の可能性が広がっている。』- <strong>ウォーレンバフェット</strong></p>
+        </blockquote>
+        <p>世界中の市場や投資機会にアクセスすることで、日本円を稼ぐよりも簡単にお金を稼ぐことができるでしょう。特別な知識や経験は必要ありません。</p>
+        <p>「World 友達 wavy」プロジェクトでは、Wizのノウハウを直接学び、一緒に外資獲得の戦略をマスターすることができます。</p>
+
+        <h2>参加することで得られるメリット</h2>
+        <ul>
+            <li>Wizのノウハウや外資獲得の戦略を直接学べる</li>
+            <li>世界中の仲間とつながり、グローバルなネットワークを築く</li>
+            <li>Wizや仲間からのサポートで、最短で億を目指す確率を高める</li>
+            <li>エアドロップのようなオファーも！特別な知識や努力は不要</li>
+        </ul>
+
+        <h2>人生の喜びを分かち合うプロジェクト</h2>
+        <p>このプロジェクトは、ただお金を稼ぐためのグループではありません。稼いだその先にある、人生の喜びや豊かさを分かち合うことも目的としています。世界中の仲間たちと集まり、共に喜びを分かち合い、支え合うコミュニティを目指しています。</p>
+
+        <h2>行動することでお金は動く</h2>
+        <blockquote>
+            <p>「夢見るだけで何もしない人たちは、夢を見ない現実主義者たちに雇われている。」 - <strong>ウォルト・ディズニー</strong></p>
+        </blockquote>
+        <p>お金を稼ぐには、まず行動することが大切です。このプロジェクトに参加し、世界中の仲間とつながることで、お金を稼ぐためのチャンスを掴みましょう。</p>
+    </section>
+
+    <section id="faq" class="faq container">
+        <h2>Q&Aコーナー</h2>
+        <div class="faq-item">
+            <h3>Q. 「World 友達 wavy」プロジェクトとは何ですか？</h3>
+            <p>A. 「World 友達 wavy」は、国境を越えて協力・共存・繁栄していくことを目指すプロジェクトです。Wizのノウハウを学び、外資獲得の戦略を身につけながら、世界中の仲間とつながり、共に繁栄を目指します。</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q. このプロジェクトに参加するメリットは何ですか？</h3>
+            <p>A. Wizのノウハウや外資獲得の戦略を学べるだけでなく、世界中の仲間とつながり、グローバルなネットワークを築くことができます。また、Wizや仲間からのサポートや励ましを得ながら、最短で億を目指す確率を高めることができます。さらに、国際的な視野で外資を稼ぐことで、初心者の方でも簡単に収入を得るチャンスが広がります。</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q. 国際的な視野で外資を稼ぐことで、なぜ稼げるのですか？</h3>
+            <p>A. 国際的な視野を持つことで、日本国内だけでなく、世界中の市場や投資機会にアクセスできるようになります。これにより、より多くの収入源や投資機会を得ることができ、初心者の方でも簡単に収入を得る可能性が高まります。</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q. エアドロップのようなオファーとは何ですか？</h3>
+            <p>A. エアドロップとは、特定のプロジェクトやサービスに参加しているだけで、後から高額なリターンをもたらすオファーのことです。特別な知識や努力は必要なく、参加しているかしていないかの差で、数百円が数億円に膨れ上がる可能性もあります。</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q. 参加費はかかりますか？</h3>
+            <p>A. このオファーに限り、参加費は永久的に無料です！今すぐ参加して、世界中の仲間とつながり、豊かな人生への第一歩を踏み出しましょう。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 World 友達 wavy プロジェクト. All Rights Reserved.</p>
+        <a href="https://lin.ee/WxkrxbW" class="line-btn">LINEで友達追加</a>
+    </footer>
+</body>
+</html>
